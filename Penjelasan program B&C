@@ -1,0 +1,44 @@
+#untuk membuat keyboard down dan keybord up, Keyboard left dan right
+while True:
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                player.left_pressed = True
+            if event.key == pygame.K_RIGHT:
+                player.right_pressed = True
+            if event.key == pygame.K_UP:
+                player.up_pressed = True
+            if event.key == pygame.K_DOWN:
+                player.down_pressed = True
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                player.left_pressed = False
+            if event.key == pygame.K_RIGHT:
+                player.right_pressed = False
+            if event.key == pygame.K_UP:
+                player.up_pressed = False
+            if event.key == pygame.K_DOWN:
+                player.down_pressed = False
+                
+                
+     #Menampilkan warna background
+    win.fill((12, 24, 36))
+    pygame.draw.rect(win, (250, 120, 60), player)
+
+    win.blit(img,rect)
+    if time.time() % 1 > 0.5:
+        pygame.draw.rect(win, BLACK, cursor)
+    pygame.display.update()
+
+    player.update()
+    #Menampilkan hasil dari semuanya
+    pygame.display.flip()
+
+    clock.tick(120)
+    pygame.display.update()
+    
+pygame.quit()
