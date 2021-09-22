@@ -1,0 +1,19 @@
+import pygame, sys
+from pygame import rect
+from pygame.locals import *
+import time
+
+
+#mendenifisikan lebar dan panjang layar
+#pemberian nama/judul output saat di running
+WIDTH, HEIGHT = 400, 400
+pygame.display.set_caption('Smooth Movement')
+
+pygame.init()#menginisialisasi semua modul yang diperlukan untuk PyGame
+win = pygame.display.set_mode((WIDTH, HEIGHT)) #Memanggil nilai HIGHT dan Widht
+clock = pygame.time.Clock()#clock Mengetahui Waktu yang di perlukan untuk benda bergerak
+
+
+# Set Warna Menggunakan RGB Colors
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
